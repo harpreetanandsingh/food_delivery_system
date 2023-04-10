@@ -1,0 +1,21 @@
+{% extends "food_delivery_app/index.html" %}
+{% block content %}
+    <form name="register" method="post" action="../insertCustomer/">
+        {% csrf_token %}
+        <pre>
+            <h1>Enter your details</h1>
+            Username      : <input type="text" name="tuname" value="" width="200"><br>
+            Password      : <input type="text" name="tpass" value="" width="200"><br>
+            First Name    : <input type="text" name="tfn" value="" width="200"><br>
+            Last Name      : <input type="text" name="tln" value="" width="200"><br>
+            Email      : <input type="text" name="temail" value="" width="200"><br>
+            Address      : <input type="text" name="taddr" value="" width="200"><br>
+            Phone      : <input type="text" name="tphone" value="" width="200"><br>
+            Zipcode      : <input type="text" name="tzip" value="" width="200"><br>
+
+        <input type="submit" name="reg" value="click to register" width="300" height="100">
+        </pre>
+
+    </form> 
+
+{% endblock %}

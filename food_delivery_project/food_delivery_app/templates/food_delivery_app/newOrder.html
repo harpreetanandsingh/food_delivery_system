@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+<head>
+   <meta charset="UTF-8">
+   <title>Title </title>
+</head>
+<body>
+<center>
+   <form name="register" method="post" action="../insertDeliveryPerson/">
+       {% csrf_token %}
+       <pre>
+           <h1>Register Yourself as a Delivery Personnel</h1>
+        Username      : <input type="text" name="duname" value="" width="300"><br>
+        Password      : <input type="text" name="dpass" value="" width="300"><br>
+        Name          : <input type="text" name="dn" value="" width="200"><br>
+        Phone         : <input type="text" name="dphone" value="" width="200"><br>
+        Address       : <input type="text" name="daddr" value="" width="200"><br>
+        Zipcode       : <input type="text" name="dzip" value="" width="200"><br>  
+        <input type="submit" name="reg" value="click to register" width="300" height="200">
+       </pre>
+
+   </form> 

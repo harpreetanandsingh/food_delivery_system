@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+<head>
+   <meta charset="UTF-8">
+   <title>Title </title>
+</head>
+<body>
+<center>
+   <form name="register" method="post" action="../insertProduct/">
+       {% csrf_token %}
+       <pre>
+           <h1>Register Yourself as a Delivery Personnel</h1>
+        Name of the item      : <input type="text" name="pname" value="" width="300"><br>
+        Price                 : <input type="text" name="price" value="" width="300"><br>
+        Description           : <input type="text" name="pdesc" value="" width="200"><br>
+        <input type="submit" name="reg" value="click to register" width="300" height="200">
+       </pre>
+
+   </form> 

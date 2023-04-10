@@ -1,0 +1,16 @@
+{% extends "food_delivery_app/index.html" %}
+{% block content %}
+    <h3>Log In</h3>
+    <form action="/login/" method="post">
+    {% csrf_token%}
+        <label for="">Username</label>
+        <input type="text" id="username" name="uname" placeholder="Enter your username" Required>
+        <br>
+        <label for="">Password</label>
+        <input type="text" id="password" name="pword" placeholder="Enter your password" Required>
+        <br>
+        <input type="submit" name="reg" value="Login" width="300" height="100">
+
+    <script src="" async defer></script>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "food_delivery_app/index.html" %}
+{% block content %}
+    <h3>Items in Restaurant</h3>
+    {% for i in items %}
+        <div>{{ i.item_name }}<br>
+            Price:{{ i.price }} 
+            Description:{{ i.description }}</div>
+    {% endfor %}
+    <a href="{% url 'prodreg' %}">Insert Item</a>
+    <a href="{% url 'man_view' restaurant_id %}">View Orders</a>
+
+
+{% endblock %}

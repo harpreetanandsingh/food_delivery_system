@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+<head>
+   <meta charset="UTF-8">
+   <title>Title </title>
+</head>
+<body>
+<center>
+   <form name="register" method="post" action="../insertManager/">
+       {% csrf_token %}
+       <pre>
+           <h1>Register Yourself as a Manager</h1>
+        Username      : <input type="text" name="muname" value="" width="300"><br>
+        Password      : <input type="text" name="mpass" value="" width="300"><br>
+        Name          : <input type="text" name="mn" value="" width="200"><br>
+        Email         : <input type="text" name="memail" value="" width="200"><br>  
+
+       </pre>
+       <pre>
+        <h1>Enter Your Restaurant details</h1>
+        Name of the Restaurant    : <input type="text" name="rname" value="" width="200"><br>
+        Address                   : <input type="text" name="raddr" value="" width="200"><br>
+        Phone                     : <input type="text" name="rphone" value="" width="200"><br>
+        Zipcode                   : <input type="text" name="rzip" value="" width="200"><br>
+
+    <input type="submit" name="reg" value="click to register" width="300" height="200">
+    </pre>
+
+   </form> 

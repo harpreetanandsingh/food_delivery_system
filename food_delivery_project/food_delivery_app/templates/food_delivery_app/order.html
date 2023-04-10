@@ -1,0 +1,8 @@
+{% extends 'food_delivery_app/index.html' %}
+
+{% block content %}
+  <h1>Order Confirmation</h1>
+  <p>Item Name: {{ order.item_name }}</p>
+  <p>Price: {{ order.price }}</p>
+  <p>Payment Type: {{ order.payment_type }}</p>
+{% endblock %}

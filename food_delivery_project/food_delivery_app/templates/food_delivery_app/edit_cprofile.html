@@ -1,0 +1,38 @@
+{% extends 'food_delivery_app/index.html' %}
+
+{% block content %}
+  <h1>My details</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Phone No.</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for delivery in deliveries %}
+        <tr>
+          <td>{{ customer.f_name }}</td>
+          <td>{{ customer.l_name }}</td>
+          <td>{{ customer.email }}</td>
+          <td>{{  }}</td>
+          <td>{{  }}</td>
+          <td>
+            {% if delivery.orderId.status_val == 'Out For Delivery' %}
+              <form method="POST" action="{% url 'del_view' personnel_id=delivery.personnelId.personnel_id %}">
+                {% csrf_token %}
+                <input type="hidden" name="order_id" value="{{ delivery.orderId.order_id }}">
+                <input type="hidden" name="delivery_id" value="{{ delivery.delivery_id }}">
+                <button type="submit" class="btn btn-success">Delivered</button>
+              </form>
+            {% endif %}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

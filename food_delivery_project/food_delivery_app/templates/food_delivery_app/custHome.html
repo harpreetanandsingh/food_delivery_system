@@ -1,0 +1,10 @@
+{% extends "food_delivery_app/index.html" %}
+{% block content %}
+
+    <h3> List Of Restaurants </h3>
+    {% for i in data %}
+        <div><a class="link" href="{% url 'item_list' i.restaurant_id %}">{{ i.restaurant_name }}</a></div>
+    {% endfor %}
+
+{% endblock %}
+

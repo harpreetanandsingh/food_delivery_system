@@ -1,0 +1,23 @@
+{% extends 'food_delivery_app/index.html' %}
+
+
+{% block content %}
+  <h1>Items</h1>
+  <ul>
+    {% for item in items %}
+      <li>
+        <h3>{{ item.item_name }}</h3>
+        <p>Price: {{ item.price }}</p>
+        <form method="post" action="{% url 'order' item.product_id %}">
+          {% csrf_token %}
+          <label for="payment_type">Payment Type:</label>
+          <select name="payment_type" id="payment_type">
+            <option value="cash">Cash</option>
+            <option value="card">Card</option>
+          </select>
+          <input type="submit" value="Buy">
+        </form>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
