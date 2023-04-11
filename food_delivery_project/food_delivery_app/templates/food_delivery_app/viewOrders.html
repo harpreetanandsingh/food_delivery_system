@@ -1,0 +1,29 @@
+{% extends 'food_delivery_app/index.html' %}
+
+{% block content %}
+    <h1>My Orders</h1>
+    {% if orders %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Restaurant Name</th>
+                    <th>Total Price</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                    <tr>
+                        <td>{{ order.0 }}</td>
+                        <td>{{ order.1 }}</td>
+                        <td>{{ order.2 }}</td>
+                        <td>{{ order.3 }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>You have not placed any orders yet.</p>
+    {% endif %}
+{% endblock %}

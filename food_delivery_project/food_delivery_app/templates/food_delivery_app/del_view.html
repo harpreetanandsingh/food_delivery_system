@@ -19,7 +19,7 @@
           <td>{{ delivery.delivery_id }}</td>
           <td>{{ delivery.orderId.order_id }}</td>
           <td>{{ delivery.orderId.customer_id.f_name }}</td>
-          <td>{{ delivery.orderId.customer_id.add_id.address }}</td>
+          <td>{{ delivery.orderId.addr_id.address }}</td>
           <td>{{ delivery.orderId.status_val }}</td>
           <td>
             {% if delivery.orderId.status_val == 'Out For Delivery' %}

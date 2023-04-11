@@ -1,0 +1,12 @@
+{%extends 'food_delivery_app/index.html'%}
+{%block content%}
+    <h2>Welcome to the Food Delivery Management System</h2><br>
+    <h3>Kindly Select one of the options below to continue</h3><br>
+    <a href="{% url 'userreg' %}">Customer Registration</a><br>
+    <a href="{% url 'delreg' %}">Delivery Person Registration</a><br>
+    <a href="{% url 'manreg' %}">Manager and Restaurant Registration</a><br>
+    <a href="{% url 'login' %}">Already a User? Login</a><br>
+
+
+
+{%endblock%}

@@ -1,12 +1,17 @@
-<!DOCTYPE html>
+{% extends 'food_delivery_app/index.html' %}
+{% comment %} <!DOCTYPE html>
 <html lang = 'en'>
 <head>
    <meta charset="UTF-8">
    <title>Title </title>
 </head>
-<body>
+<body> {% endcomment %}
+
+{%block content %}
+
 <center>
-   <form name="register" method="post" action="../insertDeliveryPerson/">
+   <h2> Fill in your details to register yourself as a delivery customer </h2>
+   {% comment %} <form name="register" method="post" action="../insertDeliveryPerson/">
        {% csrf_token %}
        <pre>
            <h1>Register Yourself as a Delivery Personnel</h1>
@@ -19,4 +24,34 @@
         <input type="submit" name="reg" value="click to register" width="300" height="200">
        </pre>
 
-   </form> 
+   </form>  {% endcomment %}
+   <form method="post" action="{% url 'insertDeliveryPerson' %}">
+      {% csrf_token %}
+      <label for="duname">Username:</label>
+      <input type="text" name="duname" required><br>
+      <label for="dpass">Password:</label>
+      <input type="password" name="dpass" required><br>
+      <label for="dn">Name:</label>
+      <input type="text" name="dn" required><br>
+      <label for="dphone">Phone:</label>
+      <input type="text" name="dphone" required><br>
+      <label for="daddr">Address:</label>
+      <input type="text" name="daddr" required><br>
+      <label for="dzip">Zipcode:</label>
+      <input type="text" name="dzip" required><br>
+    
+      <form method="POST">
+         {% csrf_token %}
+         <label for="restaurants">Select Restaurants:</label>
+         {% for restaurant in restaurants %}
+           <div>
+             <input type="checkbox" id="{{ restaurant.restaurant_id }}" name="restaurant" value="{{ restaurant.restaurant_id }}">
+             <label for="{{ restaurant.restaurant_id }}">{{ restaurant.restaurant_name }}</label>
+           </div>
+         {% endfor %}
+         <br>
+    
+      <input type="submit" value="Submit">
+    </form>
+
+   {%endblock%}

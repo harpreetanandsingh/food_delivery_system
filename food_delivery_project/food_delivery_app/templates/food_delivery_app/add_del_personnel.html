@@ -1,0 +1,44 @@
+{% extends 'food_delivery_app/index.html' %}
+
+{% block content %}
+<div class="container my-5">
+  <h2>Add Delivery Personnel</h2>
+  <form method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="duname">Username:</label>
+      <input type="text" class="form-control" id="duname" name="duname" required>
+    </div>
+    <div class="form-group">
+      <label for="dpass">Password:</label>
+      <input type="password" class="form-control" id="dpass" name="dpass" required>
+    </div>
+    <div class="form-group">
+      <label for="dn">Name:</label>
+      <input type="text" class="form-control" id="dn" name="dn" required>
+    </div>
+    <div class="form-group">
+      <label for="dphone">Phone:</label>
+      <input type="tel" class="form-control" id="dphone" name="dphone" pattern="[0-9]{10}" required>
+    </div>
+    <div class="form-group">
+      <label for="daddr">Address:</label>
+      <input type="text" class="form-control" id="daddr" name="daddr" required>
+    </div>
+    <div class="form-group">
+      <label for="dzip">Zip Code:</label>
+      <input type="text" class="form-control" id="dzip" name="dzip" required>
+    </div>
+    {% comment %} <div class="form-group">
+      <label for="restaurant">Restaurant:</label>
+      <select class="form-control" id="restaurant" name="restaurant" required>
+        <option value="">Select a restaurant</option>
+        {% for restaurant in restaurants %}
+        <option value="{{ restaurant.restaurant_id }}">{{ restaurant.restaurant_name }}</option>
+        {% endfor %}
+      </select>
+    </div> {% endcomment %}
+    <button type="submit" class="btn btn-primary">Add Delivery Personnel</button>
+  </form>
+</div>
+{% endblock %}

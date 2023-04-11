@@ -1,0 +1,25 @@
+{% extends 'food_delivery_app/index.html' %}
+
+{% block content %}
+<h1>Restaurant Analytics</h1>
+
+<h2>Average Delivery Time: {{ avg_delivery_time|floatformat:2 }} minutes</h2>
+<h2>Productivity: {{ productivity|floatformat:2 }} orders/hour</h2>
+
+{% if most_sold_product %}
+<h2>Most Sold Product: {{ most_sold_product.item_name }} ({{ most_sold_product.sales }} sales)</h2>
+{% endif %}
+
+{% if least_sold_product %}
+<h2>Least Sold Product: {{ least_sold_product.item_name }} ({{ least_sold_product.sales }} sales)</h2>
+{% endif %}
+
+{% if late_deliveries %}
+<h2>Late Deliveries: {{ late_deliveries|length }}</h2>
+<ul>
+{% for delivery in late_deliveries %}
+    <li>Order #{{ delivery.order_id.order_id }} - Dispatched: {{ delivery.timeDispatch|date:"SHORT_DATETIME_FORMAT" }}, Arrived: {{ delivery.timeArrival|date:"SHORT_DATETIME_FORMAT" }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+{% endblock %}

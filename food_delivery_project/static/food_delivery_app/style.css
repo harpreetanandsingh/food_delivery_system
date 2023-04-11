@@ -1,0 +1,54 @@
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 300%
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+
+.animation {
+    animation: slidein 2s ease-in-out;
+}
+/* @keyframes burn {
+    from {
+      box-shadow: 0px 0px 0px 0px #FF4500;
+    }
+    to {
+      box-shadow: 0px 0px 50px 20px #FF4500;
+    }
+  }
+  
+  .form-group {
+    animation: burn 1s infinite alternate;
+  } */
+
+  .pizza-animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 200px;
+    position: relative;
+  }
+  
+  .pizza-image {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: rotate-pizza 5s linear infinite;
+  }
+  
+  @keyframes rotate-pizza {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }

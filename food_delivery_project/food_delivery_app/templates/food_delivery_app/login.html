@@ -1,7 +1,20 @@
 {% extends 'food_delivery_app/index.html' %}
+{% load static %}
 {%block content%}
-    
-        <h3>Log In</h3>
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}  
+        <style>
+            h2 {
+            color: white; /* Change the color to your desired value */
+            }
+        </style>
+        <h2> Log In </h2>
+        {% comment %} <h3>Log In</h3>
         <form action="/login/" method="post">
         {% csrf_token%}
             <label for="">Username</label>
@@ -12,7 +25,49 @@
             <br>
             <input type="submit" class="btn btn-primary" name="reg" value="Login" width="300" height="100">
         
-        <script src="" async defer></script>
-       
+        <script src="" async defer></script> {% endcomment %}
+        <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" name="username" class="mb-3 form-control" id="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" class="mb-3 form-control" id="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+            <a href="{% url 'forgot_password' %}" class="btn btn-link">Forgot Password</a>
+        </form>
+
+        {% comment %} <div class="pizza-animation">
+            <img src="{% static 'images/png-transparent-pizza-margherita-sushi-pizza-pizza-delivery-pizza-thumbnail.png' %}" alt="Pizza" class="pizza-image"/>
+          </div> {% endcomment %}
+        {% comment %} <div>
+            <img id="bg-image" src="{% static 'images/png-transparent-pizza-margherita-sushi-pizza-pizza-delivery-pizza-thumbnail.png' %}" alt="Pizza Background">
+        </div> {% endcomment %}
+        <style>
+            body {
+                background-image: url('/static/images/top-view-pizza-with-red-pepper-tomato-sauce-with-copy-space (1).png');
+                background-size: cover;
+            }
+            .form-group label {
+                color: #fff; /* Change color of labels */
+              }
+              
+              .form-control {
+                background-color: #fff; /* Make text fields transparent */
+                color: #fff; /* Change color of text */
+                border-color: #fff; /* Change border color */
+              }
+              
+              .btn-primary {
+                background-color: #fff; /* Change button background color */
+                color: #000; /* Change button text color */
+              }
+              a.btn-link {
+                color: white;
+              }
+        </style>
   
 {%endblock%}        

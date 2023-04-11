@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="container">
-  <h2>Orders Currently out for Delivery</h2>
+  <h2>Orders Currently being Processed</h2>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -30,7 +30,7 @@
             <select name="personnel_id" class="form-select" aria-label="Select delivery person">
               <option selected>Select delivery person</option>
               {% for personnel in delivery_personnel %}
-              <option value="{{ personnel.personnel_id }}">{{ personnel.name }}{{personnel.addr_id.zipcode }}</option>
+              <option value="{{ personnel.personnel_id }}">{{ personnel.name }} present at {{personnel.addr_id.zipcode }}</option>
               {% endfor %}
             </select>
             <button type="submit" class="mt-3 btn btn-primary">Assign</button>
@@ -40,8 +40,38 @@
       {% endfor %}
     </tbody>
   </table>
+</tbody>
+</table>
+ <hr>
+ <h1>Orders Out For Delivery</h1>
+ <table class="table">
+  <thead>
+    <tr>
+      <th>Order ID</th>
+      <th>Customer Name</th>
+      <th>Total Price</th>
+      <th>Ordered On</th>
+      <th>Status</th>
+      <th>Delivery Person</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for order in delivery_orders %}
+      <tr>
+          <td>{{ order.order_id }}</td>
+          <td>{{ order.customer_id.f_name }}</td>
+          <td>{{ order.total_price }}</td>
+          <td>{{ order.ordered_on }}</td>
+          <td>{{ order.status_val }}</td>
+          <td>{{ order.status_val }}</td>
+
+      </tr>
+      {% endfor %}
+  </tbody>
+</table>
    <hr>
-   <h1>Orders Out For Delivery</h1>
+   <h1>Orders Delivered</h1>
    <table class="table">
     <thead>
       <tr>

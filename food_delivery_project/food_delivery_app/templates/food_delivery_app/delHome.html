@@ -1,9 +1,10 @@
 {% extends "food_delivery_app/index.html" %}
 {% block content %}
 
-    
+    <h3>Restaurant IDs of where you are employed as a delivery person</h3>
     {% for i in data %}
-        <div>{{ i.restaurant_name }}</div>
+        <div>{{ i.0}}</div>
     {% endfor %}
+    <a href="{% url 'del_view' personnel_id %}">Orders to Deliver</a>
 
 {% endblock %}
