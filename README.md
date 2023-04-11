@@ -16,7 +16,7 @@ Instructions to install:
     
 6) Now execute the command "pip install -r requirements.txt" inside the virtual environment.
 7) After all the packages are downloaded, run the command "python manage.py makemigrations" and "python manage.py migrate" one after the other.
-8) If you want to add the database using sql queries, run the ddl.sql file in MySQL workbench.
+8) If you want to add the database using sql queries, run the scipt.sql file in MySQL workbench.
 9) In the settings.py file, navigate to the DATABASES part which would look something like this,
           
       <img width="362" alt="Screenshot 2023-04-11 at 9 32 55 PM" src="https://user-images.githubusercontent.com/92373075/231221945-334a4d64-91e8-4ee2-bf94-0d9a2cfbec5f.png">
